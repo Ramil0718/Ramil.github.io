@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Ramil 的个人网站。" />
+    <title>Ramil - 个人主页</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="site-shell">
+      <!-- Header: site name, navigation links, and language switcher. -->
+      <header class="topbar" aria-label="Site header">
+        <a class="brand" href="#top" aria-label="Home">
+          <span class="brand-mark" aria-hidden="true" data-i18n="brandMark"></span>
+          <span data-i18n="brand"></span>
+        </a>
+
+        <!-- Main navigation: these links jump to sections on this page. -->
+        <nav class="nav-links" aria-label="Primary navigation">
+          <a href="#about" data-i18n="navAbout"></a>
+          <a href="#interests" data-i18n="navInterests"></a>
+          <a href="#amv" data-i18n="navAmv"></a>
+          <a href="#contact" data-i18n="navContact"></a>
+        </nav>
+
+        <!-- Language menu: labels and page text live in zh.js and en.js. -->
+        <div class="language">
+          <button
+            class="language-button"
+            type="button"
+            aria-haspopup="menu"
+            aria-expanded="false"
+            id="languageButton"
+          >
+            <span id="currentLanguage"></span>
+            <span class="chevron" aria-hidden="true"></span>
+          </button>
+          <div class="language-menu" role="menu" aria-labelledby="languageButton">
+            <button type="button" role="menuitem" data-lang="zh">中文</button>
+            <button type="button" role="menuitem" data-lang="en">English</button>
+          </div>
+        </div>
+      </header>
+
+      <main id="top">
+        <!-- Hero: first screen introduction and quick profile card. -->
+        <section class="hero" aria-labelledby="heroTitle">
+          <div class="hero-copy">
+            <p class="eyebrow" data-i18n="eyebrow"></p>
+            <h1 id="heroTitle" data-i18n="heroTitle"></h1>
+            <p class="hero-text" data-i18n="heroText"></p>
+            <div class="hero-actions">
+              <a class="button primary" href="#about" data-i18n="learnMore"></a>
+              <a class="button ghost" href="#interests" data-i18n="viewInterests"></a>
+            </div>
+          </div>
+
+          <aside class="intro-card" aria-label="Quick profile">
+            <div class="avatar" aria-hidden="true" data-i18n="avatar"></div>
+            <p class="intro-name" data-i18n="introName"></p>
+            <p class="intro-line" data-i18n="introLine"></p>
+            <dl class="intro-list">
+              <div>
+                <dt data-i18n="statusLabel"></dt>
+                <dd data-i18n="statusValue"></dd>
+              </div>
+              <div>
+                <dt data-i18n="soundLabel"></dt>
+                <dd data-i18n="soundValue"></dd>
+              </div>
+            </dl>
+          </aside>
+        </section>
+
+        <!-- About: short personal description. -->
+        <section class="about-section" id="about" aria-labelledby="aboutTitle">
+          <div class="about-heading">
+            <p class="section-kicker" data-i18n="aboutKicker"></p>
+            <h2 id="aboutTitle" data-i18n="aboutTitle"></h2>
+            <p class="about-intro" data-i18n="aboutIntro"></p>
+          </div>
+          <div class="education-panel">
+            <div class="education-toggle" role="tablist" aria-label="Education stage">
+              <button
+                class="active"
+                type="button"
+                role="tab"
+                aria-selected="true"
+                data-education-stage="undergrad"
+              ></button>
+              <button
+                type="button"
+                role="tab"
+                aria-selected="false"
+                data-education-stage="master"
+              ></button>
+            </div>
+            <div class="education-copy" aria-live="polite">
+              <p class="education-meta" id="educationMeta"></p>
+              <h3 id="educationTitle"></h3>
+              <p id="educationText"></p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Interests: click each card to open platform choices. -->
+        <section class="interests-section" id="interests" aria-labelledby="interestsTitle">
+          <div class="section-heading">
+            <div>
+              <p class="section-kicker" data-i18n="interestsKicker"></p>
+              <h2 id="interestsTitle" data-i18n="interestsTitle"></h2>
+            </div>
+          </div>
+          <div class="interest-grid">
+            <!-- Anime platforms: edit or add links inside platform-menu. -->
+            <details class="interest-card">
+              <summary>
+                <span class="interest-icon">01</span>
+                <span class="interest-arrow" aria-hidden="true">+</span>
+                <h3 data-i18n="animeTitle"></h3>
+                <p data-i18n="animeText"></p>
+                <span class="menu-hint" data-i18n="choosePlatform"></span>
+              </summary>
+              <div class="platform-menu">
+                <a href="https://bangumi.tv/user/947397" target="_blank" rel="noreferrer">Bangumi</a>
+                <!-- <a href="https://myanimelist.net/profile/yourname" target="_blank" rel="noreferrer">MyAnimeList</a>
+                <a href="https://anilist.co/user/yourname" target="_blank" rel="noreferrer">AniList</a> -->
+              </div>
+            </details>
+
+            <!-- Music platforms: edit or add links inside platform-menu. -->
+            <details class="interest-card">
+              <summary>
+                <span class="interest-icon">02</span>
+                <span class="interest-arrow" aria-hidden="true">+</span>
+                <h3 data-i18n="musicTitle"></h3>
+                <p data-i18n="musicText"></p>
+                <span class="menu-hint" data-i18n="choosePlatform"></span>
+              </summary>
+              <div class="platform-menu">
+                <a href="https://music.163.com/#/user/home?id=00000000" target="_blank" rel="noreferrer">NetEase Cloud Music</a>
+                <!-- <a href="https://open.spotify.com/user/yourname" target="_blank" rel="noreferrer">Spotify</a>
+                <a href="https://music.apple.com/profile/yourname" target="_blank" rel="noreferrer">Apple Music</a> -->
+              </div>
+            </details>
+
+            <!-- Editing/video platforms: edit or add links inside platform-menu. -->
+            <details class="interest-card">
+              <summary>
+                <span class="interest-icon">03</span>
+                <span class="interest-arrow" aria-hidden="true">+</span>
+                <h3 data-i18n="editTitle"></h3>
+                <p data-i18n="editText"></p>
+                <span class="menu-hint" data-i18n="choosePlatform"></span>
+              </summary>
+              <div class="platform-menu">
+                <a href="https://space.bilibili.com/7460287?spm_id_from=333.1007.0.0" target="_blank" rel="noreferrer">Bilibili</a>
+                <!-- <a href="https://www.youtube.com/@yourname" target="_blank" rel="noreferrer">YouTube</a>
+                <a href="https://vimeo.com/yourname" target="_blank" rel="noreferrer">Vimeo</a> -->
+              </div>
+            </details>
+          </div>
+        </section>
+
+        <!-- AMV showcase: cards are generated from the current language JS file. -->
+        <section class="amv-section" id="amv" aria-labelledby="amvTitle">
+          <div class="section-heading compact">
+            <div>
+              <p class="section-kicker" data-i18n="amvKicker"></p>
+              <h2 id="amvTitle" data-i18n="amvTitle"></h2>
+            </div>
+            <p data-i18n="amvIntro"></p>
+          </div>
+
+          <div class="amv-list" id="amvList"></div>
+        </section>
+
+        <!-- Contact: simple outgoing links. -->
+        <section class="contact" id="contact" aria-labelledby="contactTitle">
+          <div>
+            <p class="section-kicker" data-i18n="contactKicker"></p>
+            <h2 id="contactTitle" data-i18n="contactTitle"></h2>
+          </div>
+          <div class="contact-links">
+            <a href="mailto:yourname@example.com">ramil_p@zuaa.zju.edu.cn</a>
+            <a href="https://space.bilibili.com/7460287?spm_id_from=333.1007.0.0" target="_blank" rel="noreferrer">Bilibili</a>
+            <a href="https://www.youtube.com/" target="_blank" rel="noreferrer">YouTube</a>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <!-- AMV preview dialog: app.js fills this when a preview button is clicked. -->
+    <dialog class="work-dialog" id="workDialog">
+      <button class="dialog-close" type="button" aria-label="Close preview">x</button>
+      <div class="dialog-media" id="dialogMedia"></div>
+      <div class="dialog-copy">
+        <p class="section-kicker" id="dialogMeta"></p>
+        <h3 id="dialogTitle"></h3>
+        <p id="dialogDescription"></p>
+      </div>
+    </dialog>
+
+    <script src="./zh.js"></script>
+    <script src="./en.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>
