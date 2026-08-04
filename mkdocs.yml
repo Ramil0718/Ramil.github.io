@@ -1,0 +1,6 @@
+site_name: Ramil Personal Website
+docs_dir: docs
+site_dir: site
+theme:
+  name: material
+use_directory_urls: false
